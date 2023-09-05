@@ -14,8 +14,9 @@ class UserService {
     try {
       // 1 validasi user terdaptar atau belum
       const { email } = payload;
+      console.log(email);
       const user = await this.findByEmail(email);
-
+      console.log(user);
       if (user) {
         throw new Error("User sudah terdaptar!")
       }
@@ -35,9 +36,19 @@ class UserService {
    * @param {*} payload 
    */
   async login(payload) {
+    const { email } = payload;
+    const { password } = payload;
+    const user = await this.findByEmail(email);
     // 1 validasi email, email terdaftar atau tidak, kalau tidak errorkan user tidak terdaftar.
-    // 2 check password, kalau sama sukses kalau beda trow error password tidak sesuai
+    if (!user) {
+      throw new Error("User tidak ditemukan")
+      // 2 check password, kalau sama sukses kalau beda trow error password tidak sesuai
+    } else if (password!=user.password){
+      throw new Error ("Password salah !!")
+    }
     // 3 kasih message berhasil login ketika email dan password berhasil. 
+    return ("Anda berhasil log-in")
+
   }
 }
 

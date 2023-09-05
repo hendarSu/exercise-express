@@ -6,12 +6,26 @@ class UserController {
   }
 
   async login(req, res) {
+    let body = ""
+    req.on("data",async(chunk)=>{
+      body+=chunk
+    })
 
+    req.on("end", async () => {
+      try {
+        const bodyJson = JSON.parse(body);
+        // call service registrasi.
+        const login = await this.userService.login(bodyJson);
+
+        res.writeHead(201, { "Content-Type" : "application/json" });
+        res.end(JSON.stringify({ message : login, status: "success", code : 201 }, null, 2));
+      } catch (error) {
+        res.writeHead(400, { "Content-Type" : "application/json" });
+        res.end(JSON.stringify({ message : error.message, status: "fail", code : 400 }, null, 2));
+      }
+    })
     // sesuikan req dan response sesuai fitur login
     // payload atau request body { email, password };
-
-    res.writeHead(400, { "Content-Type" : "application/json" });
-    res.end(JSON.stringify({ message : "service belum di buat!", status: "fail", code : 400 }, null, 2));
   }
 
   async registration(req, res) {
