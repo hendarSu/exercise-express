@@ -33,6 +33,15 @@ class UserModel {
       console.error(error);
     }
   }
+
+  async find() {
+    try {
+      const users = await this.connect();
+      return users;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
 
 module.exports = UserModel;

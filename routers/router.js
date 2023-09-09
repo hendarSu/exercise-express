@@ -7,4 +7,5 @@ router.get("/", async (req, res) => {
 });
 
 router.use("/", userRouter);
+
 module.exports = router;

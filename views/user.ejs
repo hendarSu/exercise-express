@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ini List User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>User List</h1>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            <% users.forEach((user) => { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.email %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+
+<script src=""></script>
+</html>

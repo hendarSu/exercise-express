@@ -48,7 +48,14 @@ class UserService {
     }
     // 3 kasih message berhasil login ketika email dan password berhasil. 
     return ("Anda berhasil log-in")
+  }
 
+  async getAll() {
+    try {
+      return await this.userModel.find();
+    } catch (error) {
+      throw error;
+    }
   }
 }
 
