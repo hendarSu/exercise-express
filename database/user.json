@@ -18,5 +18,10 @@
     "id": 2,
     "email": "hendar2@binar.com",
     "password": "123"
+  },
+  {
+    "id": "1",
+    "email": "fahman.tahrim@gmail.com",
+    "password": "1234567"
   }
 ]
