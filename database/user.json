@@ -33,5 +33,25 @@
     "id": 4,
     "email": "hendar2@clodeo.com",
     "password": "123"
+  },
+  {
+    "id": 2,
+    "email": "hendar23@clodeo.com",
+    "password": "123"
+  },
+  {
+    "id": 2,
+    "email": "hendar234@clodeo.com",
+    "password": "123"
+  },
+  {
+    "id": 2,
+    "email": null,
+    "password": "123"
+  },
+  {
+    "id": 2,
+    "email": "hendar2345@clodeo.com",
+    "password": "qqqq"
   }
 ]
