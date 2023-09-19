@@ -1,6 +1,6 @@
 const express = require("express");
-const UserExpressController = require("../controllers/user.express.controller");
-const registrationValidate = require("../middlewares/users/registration-validate");
+const UserExpressController = require("../../controllers/user.express.controller");
+const registrationValidate = require("../../middlewares/users/registration-validate");
 const userRouter = express.Router();
 const userExpressController = new UserExpressController();
 
